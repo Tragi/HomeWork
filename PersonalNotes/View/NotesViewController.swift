@@ -106,7 +106,6 @@ class NotesViewController: UIViewController, NotesViewModelDelegate {
         }, completion: { (_) in
             self.collectionView?.reloadData()
             self.collectionView?.isUserInteractionEnabled = true
-            self.viewModel.state.dataSourceState.removeAll(where: {$0.state == .preview})
         })
     }
     
@@ -170,6 +169,7 @@ extension NotesViewController: UICollectionViewDelegate, UICollectionViewDataSou
         }
         if viewModel.state.dataSourceState.contains(where: {$0.state == .preview && $0.indexPath == indexPath}) {
             cell.startPreview()
+            viewModel.state.dataSourceState.removeAll(where: {$0.state == .preview})
             UserDefaults.standard.set(true, forKey: "ItemCellHint")
         }
     }
