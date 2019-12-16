@@ -8,6 +8,7 @@
 
 import UIKit
 
-class Note: NSObject {
-
+struct Note: Codable {
+    var id:Int
+    var title:String
 }

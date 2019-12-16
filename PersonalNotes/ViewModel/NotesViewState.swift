@@ -8,8 +8,6 @@
 
 import UIKit
 
-typealias DataSourceChanges = (deletedSections:[Int], insertedSections:[Int], movedSections:[(from:Int, to:Int)], deletedIndexPaths:[IndexPath], insertedIndexPaths:[IndexPath], movedIndexPaths:[(from:IndexPath, to:IndexPath)], updatedIndexPaths:[IndexPath])
-
 struct NotesViewState {
     
     enum Sort:String {
@@ -27,12 +25,12 @@ struct NotesViewState {
     var dataBase:DataBase = .online
     
     enum Display:String {
-        case dataSource = "dataSource"
-        case error = "Error"
+        case dataSource = "DataSource"
         case loading = "Loading"
     }
     
     var display:Display = .loading
+    var error:String?
     
     struct DataSourceState {
         enum State:String {
@@ -44,6 +42,5 @@ struct NotesViewState {
         var state:State = .initial
     }
     
-    var dataSourceState:[DataSourceState]
-    var dataSourceChanges:DataSourceChanges
+    var dataSourceState:[DataSourceState] = []
 }

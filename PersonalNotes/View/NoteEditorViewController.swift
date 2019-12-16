@@ -9,22 +9,36 @@
 import UIKit
 
 class NoteEditorViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var textView:UITextView?
+    @IBOutlet weak var saveItem:UIBarButtonItem?
+    
+    var completionHandler:((NoteEditorViewController, Bool) -> Void) = {(_,_) in}
+    var text:String?
+    
+    @IBAction func cancelItemDidTouch(sender: UIBarButtonItem) {
+        completionHandler(self, false)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func saveItemDidTouch(sender: UIBarButtonItem) {
+        completionHandler(self, true)
     }
-    */
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if let textView = textView {
+            textViewDidChange(textView)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        textView?.text = text
+        textView?.becomeFirstResponder()
+    }
+}
 
+extension NoteEditorViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        saveItem?.isEnabled = textView.text.count > 0
+    }
 }

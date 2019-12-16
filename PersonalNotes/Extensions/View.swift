@@ -8,14 +8,16 @@
 
 import UIKit
 
-class View: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+extension UIView {
+    // isHidden value inside stackView behave like counter and not boolean (how many times you set same value - too many times you need to set oposite value)
+    var isHiddenInStackView: Bool {
+        get {
+            return isHidden
+        }
+        set {
+            if isHidden != newValue {
+                isHidden = newValue
+            }
+        }
     }
-    */
-
 }

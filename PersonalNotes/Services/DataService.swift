@@ -8,14 +8,10 @@
 
 import UIKit
 
-class DataService: UIView {
+protocol DataService: class {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+    func notes(completionHandler: @escaping (([Note]?, Error?) -> Void))
+    func createNote(title:String, completionHandler: @escaping ((Note?, Error?) -> Void))
+    func updateNote(note:Note, completionHandler: @escaping ((Note?, Error?) -> Void))
+    func deleteNote(note:Note, completionHandler: @escaping ((Note?, Error?) -> Void))
 }
