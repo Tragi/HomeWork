@@ -86,8 +86,8 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUo-As-PEb">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVV-xt-D54">
-                                                                    <rect key="frame" x="10" y="5" width="355" height="20"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVV-xt-D54">
+                                                                    <rect key="frame" x="10" y="0.0" width="355" height="30"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -97,8 +97,8 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="jVV-xt-D54" secondAttribute="trailing" constant="10" id="Huo-Yh-ZYe"/>
                                                                 <constraint firstItem="jVV-xt-D54" firstAttribute="leading" secondItem="QUo-As-PEb" secondAttribute="leading" constant="10" id="K9g-jd-h1d"/>
-                                                                <constraint firstAttribute="bottom" secondItem="jVV-xt-D54" secondAttribute="bottom" constant="5" id="bGH-9t-gG7"/>
-                                                                <constraint firstItem="jVV-xt-D54" firstAttribute="top" secondItem="QUo-As-PEb" secondAttribute="top" constant="5" id="la8-5u-lyA"/>
+                                                                <constraint firstAttribute="bottom" secondItem="jVV-xt-D54" secondAttribute="bottom" id="bGH-9t-gG7"/>
+                                                                <constraint firstItem="jVV-xt-D54" firstAttribute="top" secondItem="QUo-As-PEb" secondAttribute="top" id="la8-5u-lyA"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>

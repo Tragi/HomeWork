@@ -160,7 +160,7 @@ extension NotesViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let constraintRect = CGSize(width: collectionView.bounds.width - 20, height: CGFloat.greatestFiniteMagnitude)
         let text = note.title
         let boundingBox = text.boundingRect(with: constraintRect, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [.font: UIFont.systemFont(ofSize: 15)], context: nil)
-        return CGSize(width: constraintRect.width, height: boundingBox.height + 10)
+        return CGSize(width: collectionView.bounds.width, height: boundingBox.height + 10)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
